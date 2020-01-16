@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": false,
+    "declarationMap": false,
+    "noEmit": false,
+    "outDir": "build",
+    "noUnusedParameters": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "compileOnSave": true,
+  "include": ["src"]
+}
