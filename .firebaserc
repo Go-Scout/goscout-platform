@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "mobile": "go-scout",
+    "default": "go-scout"
+  }
+}
