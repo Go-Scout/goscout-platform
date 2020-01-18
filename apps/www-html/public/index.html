@@ -1,203 +1,246 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="GoScout">
-    <meta name="theme-color" content="#0082c8">
-    <meta name="apple-mobile-web-app-status-bar" content="#0082c8">
-    <title>GoScout</title>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/open-iconic/font/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="img/logo.ico">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="apple-icon-167.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-startup-image" href="apple-splash-2048-2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-2732-2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1668-2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-2388-1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1668-2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-2224-1668.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1536-2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-2048-1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1242-2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-2688-1242.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1125-2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-2436-1125.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-828-1792.png"  media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1792-828.png"  media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1242-2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-2208-1242.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-750-1334.png"  media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1334-750.png"  media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="apple-splash-640-1136.png"  media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="apple-splash-1136-640.png"  media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  </head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#"><img src="img/go-scout-logo.png" alt="GoScout Logo"></a>
-        <button class="navbar-toggler" style="border: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active px-2">
-              <a class="nav-link nav-link-ltr navLink pb-3" href="#">Home</a>
-            </li>
-            <li class="nav-item active px-2">
-              <a class="nav-link nav-link-ltr navLink pb-3" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item active px-2" style="display: none;" id="showcase">
-                <a class="nav-link nav-link-ltr navLink pb-3" href="user/showcase.html">Showcases</a>
-            </li>
-            <li class="nav-item active px-2" id="login" data-toggle="modal" data-target="#lgm">
-                <a class="nav-link nav-link-ltr navLink pb-3" href="#">Login</a>
-            </li>
-            <li class="nav-item active px-2" id="signup" data-toggle="modal" data-target="#sum">
-                <a class="nav-link nav-link-ltr navLink pb-3" href="#">Sign Up</a>
-            </li>
-            <li class="nav-item active px-2" style="display: none;" id="logout">
-              <a class="nav-link nav-link-ltr navLink pb-3" href="#">Logout</a>
-            </li>
-        </ul></div>
-    </nav>
-    <div class="modal fade" style="overflow-x: hidden;" id="lgm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="loginForm">
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Email:</label>
-                <input id="login-email" type="email" placeholder="Email MUST be at @prepbaseballreport.com" style="width: 100%;">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Password:</label>
-                <input id="login-password" type="password" placeholder="Password" style="width: 100%;">
-              </div>
-              <button type="submit" class="btn btn-outline btn-danger">Login</button>
-              <br>
-              <br>
-              <p class="text-danger" id="lgmError"></p>
-            </form>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="GoScout">
+  <meta name="theme-color" content="#0082c8">
+  <meta name="apple-mobile-web-app-status-bar" content="#0082c8">
+  <title>GoScout</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/open-iconic/font/css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="img/logo.ico">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="icons/apple-icon-167.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-2732.png"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2732-2048.png"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2388.png"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2388-1668.png"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2224.png"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2224-1668.png"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1536-2048.png"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-1536.png"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2688.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2688-1242.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1125-2436.png"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2436-1125.png"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-828-1792.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1792-828.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2208.png"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-2208-1242.png"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-750-1334.png"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1334-750.png"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-640-1136.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="icons/apple-splash-1136-640.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#"><img src="img/go-scout-logo.png" alt="GoScout Logo"></a>
+    <button class="navbar-toggler" style="border: none;" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active px-2">
+          <a class="nav-link nav-link-ltr navLink pb-3" href="#">Home</a>
+        </li>
+        <li class="nav-item active px-2">
+          <a class="nav-link nav-link-ltr navLink pb-3" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item active px-2" style="display: none;" id="showcase">
+          <a class="nav-link nav-link-ltr navLink pb-3" href="user/showcase.html">Showcases</a>
+        </li>
+        <li class="nav-item active px-2" id="login" data-toggle="modal" data-target="#lgm">
+          <a class="nav-link nav-link-ltr navLink pb-3" href="#">Login</a>
+        </li>
+        <li class="nav-item active px-2" id="signup" data-toggle="modal" data-target="#sum">
+          <a class="nav-link nav-link-ltr navLink pb-3" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item active px-2" style="display: none;" id="logout">
+          <a class="nav-link nav-link-ltr navLink pb-3" href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="modal fade" style="overflow-x: hidden;" id="lgm" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
-      </div>
-    </div>
-    <div class="modal fade" style="overflow-x: hidden;" id="sum" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email:</label>
+              <input id="login-email" type="email" placeholder="Email MUST be at @prepbaseballreport.com"
+                style="width: 100%;">
             </div>
-            <div class="modal-body">
-              <form id="signup-form">
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Email:</label>
-                  <input id="signup-email" type="email" placeholder="Email MUST be at @probaseballreport.com" style="width: 100%;">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Password:</label>
-                  <input id="signup-password" type="password" placeholder="Password" style="width: 100%;">
-                </div>
-                  <form>
-                    <input type="checkbox" name="checkbox" value="check" id="agree" onclick="showButton()"> I have read and agree to the <a href="terms.pdf">Terms and Conditions.</a>
-                    <br>
-                    <br>
-                    <input type="submit" id="loginSubmit" class="btn btn-danger noDisplay" name="submit" value="Login">
-                    <br>
-                    <p class="text-danger" id="sumError"></p>
-                  </form>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Password:</label>
+              <input id="login-password" type="password" placeholder="Password" style="width: 100%;">
             </div>
-          </div>
-      </div>
-    </div>
-    <main>
-      <div class="container-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('img/home-bg.jpg'); background-position: center;
-        background-repeat: no-repeat; background-size: cover; height: 65vh;">
-      </div>
-      <section>
-        <h2 class="text-dark text-center pt-5 textGrad">About Us</h2>
-        <div class="hr bg-danger"></div>
-        <h6 class="text-center ml-5 mr-5">
-            At GoScout, we tie technology with the world of sports profiling and athletic recruitment, to make your career a whole lot easier. Recruiters, companies, and sports profilers often have jobs that demand tedious work. Putting together profiles, reports, and such can take an incredibly long time, eating up hours of the day, lowering your overall output.
-            All of that makes it challenging to focus on the more personally rewarding aspects of their job, affecting happiness and productivity.
-            GoScout believes in working hard but also working smart. Through intelligently designed technology and a world-class team of innovative developers, we develop automation-focused solutions built for many facets of the sports industry.
-            Maybe, you have an idea to speed up tasks, create certain kinds of data, or want to improve a process, but don't know where to start. The GoScout team prides itself on being real-world problem-solvers, and with new quarterly products and innovations we are always on the cutting edge of what our customers need. Give us a chance, and we will give you hope and a new perspective.
-        </h6>
-      </section>
-    </main>
-    <br>
-    <br>
-    <section class="container-fluid" style="overflow-x: hidden;" id="contactSection">
-      <h3 class="text-center textGrad">Contact Us</h3>
-      <div class="row">
-        <div class="col-md-6" data-aos="fade-up-right" data-aos-once="true">
-          <form id="contact">
-              <div class="form-group">
-                <label for="emailInput">Email address</label>
-                <input type="email" class="form-control" id="emailInput" aria-label="Email Contact Form" aria-describedby="Email Contact Form">
-                <small id="emailHelp" class="form-text text-muted">Your email will not be shared</small>
-              </div>
-              <div class="form-group">
-                <label for="nameInput">Name</label>
-                <input type="text" id="nameInput" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="messageInput">Message for us</label>
-                <textarea type="text" id="messageInput" class="form-control"></textarea>
-              </div>
-              <button type="submit" class="btn" id="sendBtn">
-                <span class="oi oi-location" title="Send Icon" aria-label="Send Icon"></span> Submit
-              </button>
-              <p id="sent" class="text-success"><i></i></p>
+            <button type="submit" class="btn btn-outline btn-danger">Login</button>
+            <br>
+            <br>
+            <p class="text-danger" id="lgmError"></p>
           </form>
         </div>
-        <div class="col-md-2 offset-md-2" data-aos="fade-up-left" data-aos-once="true">
-          <br>
-          <a href="tel:2197819599">
-            <span class="oi oi-phone" style="color: black; font-size: 24px;" title="Phone Icon" aria-label="Phone Icon"></span>
-          </a>
-          <br>
-          <br>
-          <a href="mailto:alexdelrio@prepbaseballreport.com">
-            <span class="oi oi-envelope-closed" style="color: black; font-size: 24px;" title="Mail Icon" aria-label="Mail Icon"></span>
-          </a>
-          <br />
-          <br />
-          <img class="d-none d-md-block" src="img/logo2.jpg" alt="GoScout Logo" />
-        </div>
-        <img class="d-sm-block d-md-none" style="margin: 0 auto 0 auto;" src="img/logo2.jpg" alt="GoScout Logo" />
       </div>
-      <br>
-      <p class="text-center text-muted">Copyright (C) 2020 GoScout, LLC</p>
+    </div>
+  </div>
+  <div class="modal fade" style="overflow-x: hidden;" id="sum" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email:</label>
+              <input id="signup-email" type="email" placeholder="Email MUST be at @probaseballreport.com"
+                style="width: 100%;">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Password:</label>
+              <input id="signup-password" type="password" placeholder="Password" style="width: 100%;">
+            </div>
+            <form>
+              <input type="checkbox" name="checkbox" value="check" id="agree" onclick="showButton()"> I have read and
+              agree to the <a href="terms.pdf">Terms and Conditions.</a>
+              <br>
+              <br>
+              <input type="submit" id="loginSubmit" class="btn btn-danger noDisplay" name="submit" value="Login">
+              <br>
+              <p class="text-danger" id="sumError"></p>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="container-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('img/home-bg.jpg'); background-position: center;
+        background-repeat: no-repeat; background-size: cover; height: 65vh;">
+    </div>
+    <section>
+      <h2 class="text-dark text-center pt-5 textGrad">About Us</h2>
+      <div class="hr bg-danger"></div>
+      <h6 class="text-center ml-5 mr-5">
+        At GoScout, we tie technology with the world of sports profiling and athletic recruitment, to make your career a
+        whole lot easier. Recruiters, companies, and sports profilers often have jobs that demand tedious work. Putting
+        together profiles, reports, and such can take an incredibly long time, eating up hours of the day, lowering your
+        overall output.
+        All of that makes it challenging to focus on the more personally rewarding aspects of their job, affecting
+        happiness and productivity.
+        GoScout believes in working hard but also working smart. Through intelligently designed technology and a
+        world-class team of innovative developers, we develop automation-focused solutions built for many facets of the
+        sports industry.
+        Maybe, you have an idea to speed up tasks, create certain kinds of data, or want to improve a process, but don't
+        know where to start. The GoScout team prides itself on being real-world problem-solvers, and with new quarterly
+        products and innovations we are always on the cutting edge of what our customers need. Give us a chance, and we
+        will give you hope and a new perspective.
+      </h6>
     </section>
-    <script src="js/index.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
-    <script src="js/firebase.js"></script>
-    <script>
-      AOS.init()
-    </script>
-  </body>
+  </main>
+  <br>
+  <br>
+  <section class="container-fluid" style="overflow-x: hidden;" id="contactSection">
+    <h3 class="text-center textGrad">Contact Us</h3>
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-up-right" data-aos-once="true">
+        <form id="contact">
+          <div class="form-group">
+            <label for="emailInput">Email address</label>
+            <input type="email" class="form-control" id="emailInput" aria-label="Email Contact Form"
+              aria-describedby="Email Contact Form">
+            <small id="emailHelp" class="form-text text-muted">Your email will not be shared</small>
+          </div>
+          <div class="form-group">
+            <label for="nameInput">Name</label>
+            <input type="text" id="nameInput" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="messageInput">Message for us</label>
+            <textarea type="text" id="messageInput" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn" id="sendBtn">
+            <span class="oi oi-location" title="Send Icon" aria-label="Send Icon"></span> Submit
+          </button>
+          <p id="sent" class="text-success"><i></i></p>
+        </form>
+      </div>
+      <div class="col-md-2 offset-md-2" data-aos="fade-up-left" data-aos-once="true">
+        <br>
+        <a href="tel:2197819599">
+          <span class="oi oi-phone" style="color: black; font-size: 24px;" title="Phone Icon"
+            aria-label="Phone Icon"></span>
+        </a>
+        <br>
+        <br>
+        <a href="mailto:alexdelrio@prepbaseballreport.com">
+          <span class="oi oi-envelope-closed" style="color: black; font-size: 24px;" title="Mail Icon"
+            aria-label="Mail Icon"></span>
+        </a>
+        <br />
+        <br />
+        <img class="d-none d-md-block" src="img/logo2.jpg" alt="GoScout Logo" />
+      </div>
+      <img class="d-sm-block d-md-none" style="margin: 0 auto 0 auto;" src="img/logo2.jpg" alt="GoScout Logo" />
+    </div>
+    <br>
+    <p class="text-center text-muted">Copyright (C) 2020 GoScout, LLC</p>
+  </section>
+  <script src="js/index.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.min.js"></script>icons/
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+  <script src="js/base.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    AOS.init()
+  </script>
+</body>
+
 </html>

@@ -1,14 +1,15 @@
 //Modified off of the CDCW Firebase Contact Form
 import { config } from "firebase-functions";
-import nodemailer from "nodemailer";
+import mailer from "nodemailer";
 
+console.log("config", config());
 //to make it work you need gmail account
 const gmailEmail = config().gmail.login;
 const gmailPassword = config().gmail.pass;
 
 //creating function for sending emails
 export default function(message: any, name: any, email: any) {
-  let transporter = nodemailer.createTransport({
+  let transporter = mailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false,

@@ -7,7 +7,7 @@ const use = (app: Application, router: Router): void => {
   usersRoutes(router);
   showcasesRoutes(router);
 
-  app.use("/api/v1", router);
+  app.use("/v1", router);
 };
 
 export default { use };

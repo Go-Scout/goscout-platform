@@ -2,31 +2,30 @@
   "name": "go-scout-platform",
   "version": "0.0.0",
   "workspaces": {
-    "packages": [
-      "apps/**",
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/firebase-admin",
-      "**/firebase-admin/**",
-      "**/firebase-functions",
-      "**/firebase-functions/**"
-    ]
+    "packages": ["packages/*", "apps/*"],
+    "nohoist": ["**/firebase-admin", "**/firebase-admin/**", "**/firebase-functions", "**/firebase-functions/**"]
   },
   "scripts": {
     "build": "lerna run build",
     "cleanup": "lerna run cleanup",
     "coverage": "",
     "deploy": "lerna run deploy",
+    "firebase": "lerna run build && firebase deploy",
     "lint": "run-p -c 'lint:*'",
     "lint:json": "jsonlint",
+    "lint:css": "stylelint '**/*.{css,scss}' --config ./config/lint/.stylelintrc --fix",
     "lint:eslint": "eslint '{packages,apps}/**/*.{js,ts,tsx}' -c ./config/lint/.eslintrc.js --fix",
     "local:build": "lerna run local:build",
+    "logs": "firebase functions:log",
+    "publish:packages": "lerna run publish",
     "release": "",
-    "serve": "lerna run serve",
+    "serve": "lerna run build && firebase serve --only functions",
+    "shell": "lerna run build && firebase functions:shell",
     "stage": "lerna run stage",
+    "start": "yarn shell",
     "strap": "lerna bootstrap",
-    "test": "jest"
+    "test": "jest",
+    "tdd": "jest --watch"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -38,6 +37,7 @@
     "@babel/runtime-corejs3": "^7.6.0",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@go-scout/core": "0.0.1",
     "@iteratec/semantic-release-bitbucket": "^1.1.1",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
@@ -63,7 +63,6 @@
     "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
-    "commitizen": "^4.0.3",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
@@ -102,35 +101,18 @@
     }
   },
   "lint-staged": {
-    "**/*.json": [
-      "jsonlint --formatter=verbose",
-      "git add"
-    ],
-    "**/*.{mjs, js, ts, tsx}": [
-      "eslint -c ./config/lint/.eslintrc.js --fix --quiet",
-      "git add"
-    ],
-    "**/*.{mjs, js, ts, tsx, yml, md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.test.{js, ts, tsx}": [
-      "jest"
-    ]
+    "**/*.json": ["jsonlint --formatter=verbose", "git add"],
+    "**/*.{css|scss}": ["stylelint --config ./config/lint/.stylelintrc --fix --formatter=verbose", "git add"],
+    "**/*.{mjs, js, ts, tsx}": ["eslint -c ./config/lint/.eslintrc.js --fix --quiet", "git add"],
+    "**/*.{mjs, js, ts, tsx, yml, md}": ["prettier --write", "git add"],
+    "**/*.test.{js, ts, tsx}": ["jest"]
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testMatch": [
-      "**/__tests__/*.{ts|tsx|js}",
-      "**/*.{test|spec}.{ts|tsx|js}"
-    ],
+    "testMatch": ["**/__tests__/*.{ts|tsx|js}", "**/*.{test|spec}.{ts|tsx|js}"],
     "globals": {
       "ts-jest": {
         "babelConfig": true,
@@ -138,53 +120,29 @@
       }
     },
     "collectCoverage": true,
-    "collectCoverageFrom": [
-      "<rootDir>/server /**/*.ts",
-      "!<rootDir> /**/*{stub,mocks,index,test,main}.ts"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules"
-    ],
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text",
-      "text-summary"
-    ],
+    "collectCoverageFrom": ["<rootDir>/server /**/*.ts", "!<rootDir> /**/*{stub,mocks,index,test,main}.ts"],
+    "coveragePathIgnorePatterns": ["/node_modules"],
+    "coverageReporters": ["json", "lcov", "text", "text-summary"],
     "moduleNameMapper": {
       "\\.{jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga}$": "<rootDir>/__mocks__/mocks.js",
       "\\.{css|less}$": "<rootDir>/__mocks__/mocks.js"
     },
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ]
+    "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"]
   },
-  "eslintIgnore": [
-    "lib/",
-    ".firebase/",
-    "*.d.ts",
-    "node_modules/"
-  ],
+  "eslintIgnore": ["lib/", "build/", ".firebase/", "*.d.ts", "node_modules/"],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "release": {
     "branch": "master",
     "message": "chore(release): v$ {nextRelease.version}: \n\n$ {nextRelease.notes}\n\n[***NO_CI***]",
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      "@semantic-release/git"
-    ],
-    "verifyConfig": [
-      "@iteratec/semantic-release-bitbucket"
-    ],
+    "verifyConditions": ["@semantic-release/changelog", "@semantic-release/git"],
+    "verifyConfig": ["@iteratec/semantic-release-bitbucket"],
     "prepare": [
       {
         "path": "@semantic-release/changelog",
@@ -195,7 +153,7 @@
     "publish": [
       {
         "path": "@iteratec/semantic-release-bitbucket",
-        "repositoryName": "temp-lerna-node"
+        "repositoryName": "goscout-platform"
       }
     ]
   },
@@ -203,6 +161,6 @@
   "author": "Ruby Jasmin <rj@rubyjasmin.com> (https://rubyjasmin.com/)",
   "repository": {
     "type": "git",
-    "url": "test"
+    "url": "https://bitbucket.org/alexd23/goscout-platform.git"
   }
 }

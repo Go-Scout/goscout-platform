@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import gs from "@goscout/core";
+import gs from "@go-scout/core";
 import { handleError } from "../utils";
 
 export async function sync(req: Request, res: Response): Promise<Response> {

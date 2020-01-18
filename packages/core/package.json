@@ -1,6 +1,6 @@
 {
   "name": "@go-scout/core",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "Core domain features for GoScout App",
   "keywords": ["player", "showcase", "writeup"],
   "main": "./lib/index.js",
@@ -8,8 +8,8 @@
   "scripts": {
     "build": "tsc",
     "cleanup": "rimraf lib",
-    "prepublish": "run-s cleanup build",
-    "publish": "npm publish"
+    "prepare": "run-s cleanup build",
+    "publish": "npm publish --scripts-prepend-node-path"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -18,11 +18,11 @@
   },
   "license": "UNLICENSED",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/go-scout"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@bitbucket.org/alexd23/goscout-platform.git",
+    "url": "ssh://git@github.com/Go-Scout/goscout-platform.git",
     "directory": "packages/core"
   },
   "author": "Ruby Jasmin <rj@rubyjasmin.com> (https://rubyjasmin.com/)"

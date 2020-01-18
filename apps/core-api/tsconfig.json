@@ -7,9 +7,7 @@
     "noEmit": false,
     "outDir": "build",
     "noUnusedParameters": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types", "src/**/types/**"]
   },
   "compileOnSave": true,
   "include": ["src"]

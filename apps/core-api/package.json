@@ -1,23 +1,22 @@
 {
-  "name": "@goscout/core-api",
+  "name": "@go-scout/core-api",
   "version": "0.0.0",
   "main": "build/index.js",
   "engines": {
     "node": "10"
   },
+  "workspaces": {
+    "nohoist": ["**/@go-scout/core"]
+  },
   "scripts": {
     "build": "tsc",
-    "cleanup": "rimraf build",
-    "serve": "npm run build && firebase serve --only functions",
-    "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "yarn build && firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "cleanup": "rimraf build"
   },
   "dependencies": {
-    "@goscout/core": "0.0.0",
+    "@go-scout/core": "0.1.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "compression": "1.7.4",
     "express": "^4.17.1",
     "firebase-admin": "^8.9.0",
     "firebase-functions": "^3.3.0",
